@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML</title>
+<link rel ="stylesheet"
+href ="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<link rel="stylesheet" href="style.css">
+<style>
+ body{
+ margin: 0;
+ padding: 0;
+ height: 100%;
+ overflow-x: hidden;
+ background-color: #040720;
+ color: #FFFFFF;
+ font-family: serif;
+ }
+ header {
+ text-align: left;
+ }
+ .intro {
+font-size: 1.5rem;
+color:#F6BE00;
+opacity: 0;
+animation: fadeIn 2s ease forwards;
+margin-left: 40px;
+}
+ .name{
+font-size: 4rem;
+color:#FF6700;
+opacity: 0;
+animation: fadeIn 2s ease forwards;
+animation-delay: 0.5s;
+}
+.home{
+display: flex;
+align-items: center;
+gap: 40px;
+padding: 40px 20px;
+max-width: 1000px;
+margin: 0 auto;
+}
+.home.reverse{
+flex-direction:row-reverse;
+}
+.home{
+flex: 1;
+}
+.img{
+width:300px;
+height:300px;
+border-radius: 50%;
+object-fit: cover;
+border: 2px solid #FF6700;
+margin:0 20px;
+flex-shrink: 0;
+}
+p {
+color:  #FFFFFF;
+line-height: 1.6;
+font-size: 1.6rem;
+max-width: 500px;
+margin: 0px;
+padding: 0 10px;
+}
+ @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 768px) {
+   .home, .home.reverse {
+     flex-direction: column;
+     text-align: center;
+   }
+ }
+ .top-left-name{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  color:#FF6700;
+  font-weight: bold;
+  z-index: 10000;
+ }
+ header h1{
+  margin-top: 0;
+ }
+ .navbar{
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  padding-left: 600px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  padding-top: 20px;
+  padding-bottom: 20px; 
+  background: #040720
+ }
+ .navbar a{
+  color: #FF6700;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s;
+ }
+ .navbar a:hover{
+  color: #F6BE00;
+ }
+ .section-content{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 40px;
+  
+ }
+ .about-text{
+  flex: 2;
+  max-width: 700px;
+  opacity: 0;
+ }
+ h2{
+  font-size: 1.5rem;
+  color:#F6BE00;
+  margin-bottom: 0;
+ }
+ .subtitle{
+  font-weight: bold;
+  font-size: 3rem;
+  color: #FF6700;
+  text-align: center;
+  margin-bottom: 20px;
+ }
+ .about-img-container{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  opacity: 0;
+ }
+ .about-img{
+  width: 500px;
+  height:500px;
+  border-radius:50%;
+  border: 2px solid #FF6700;
+  object-fit: cover;
+  margin-top: 250px;
+ }
+ .page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align:center;
+  padding: 20px 40px 40px 40px;
+ }
+ @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+ }
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-left {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.slide-right {
+  animation: slideInRight 1s ease forwards;
+}
+@media(max-width: 768px) {
+  .section-content{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-img{
+    margin-top: 20px;
+    max-width: 250px;
+  }
+}
+.contact-section h2{
+  color:#FF6700 ;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.contact-box{
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid #F6BE00;
+  border-radius: 10px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  gap: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+}
+.social-section .contact-box a {
+  color: #FF6700;       
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.3rem;
+  display: block;
+}
+.contact-box p{
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+.contact-box:hover {
+  box-shadow: 0 0 10px;
+  color:#F6BE00;
+  transform: translateY(-3px);
+}
+
+.socials-box a{
+  color: #FF6700;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.socials-box a:hover{
+  color: #F6BE00;
+  transform: translateY(-5px);
+}
+.decor-layer{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+overflow: hidden;
+}
+.diamond{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(255, 103, 0, 0.3);
+  filter: drop-shadow(0 0 8px rgba(255, 103, 0, 0.3));
+  animation: rotateAndFloatDiamond 10s linear infinite;
+   transform: rotate(45deg);
+}
+.d1{ top: 15%; left: 10%; }
+.d2{ top: 60%; left: 75%; width: 60px; height: 60px; }
+.d3{ top: 35%; left: 45%; width: 100px; height: 100px; }
+.d4{ top: 20%; left: 50%; width: 50px; height: 50px; }
+.d5{ top: 70%; left: 30%; width: 30px; height: 30px; }
+
+@keyframes rotateDiamond{
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(360deg); }
+}
+  @keyframes rotateAndFloatDiamond {
+  0%{ transform: rotate(0deg) translateY(0); }
+  50%{ transform: rotate(180deg) translateY(-20px);  }
+  100%{transform: rotate(360deg) translateY(0); }
+  }
+ .cursor-trail{
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  pointer-events: none;
+  z-index: 9999;
+  animation:trailFade 0.9s ease out forwards;
+ }
+ @keyframes trailFade {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+.page header{
+  position: relative;
+  z-index: 5;
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.star-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background:orange;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  filter: drop-shadow(0 0 6px #FF6700);
+  animation: rotateStar linear infinite;
+}
+
+@keyframes rotateStar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.contact-layout{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-details{
+  flex: 1;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+.social-section{
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color:#F6BE00;
+}
+.follow-title{
+  font-size: 2rem;
+  color: #FF6700;
+  margin-bottom: 0;
+}
+.social-section a{
+  color: #FF6700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-section a:hover{
+  color: #F6BE00;
+}
+@media (max-width: 768px){
+  .contact-layout{
+   grid-template-columns: 1fr;
+   gap: 20px;
+  }
+
+  .socials-section, .contact-details{
+  grid-template-rows: unset;
+  }
+}
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .contact-column {
+    gap: 15px;
+  }
+}
+.contact-box i {
+  font-weight: normal;       
+  margin-right: 10px;        
+  color: #FF6700;            
+  font-size: 1.3rem;        
+  vertical-align: middle;    
+}
+
+</style>
+</head>
+<body>
+  <div class ="decor-layer">
+    <div class="star-layer"></div>
+    <div class ="diamond d1"></div>
+    <div class ="diamond d2"></div>
+    <div class ="diamond d3"></div>
+    <div class ="diamond d4"></div>
+    <div class ="diamond d5"></div>
+  </div>
+  <div class ="cursor-trail"></div>
+  <div class ="top-left-name">Phil</div>
+  <div class="scroll-indicator"></div>
+
+  <nav class ="navbar">
+    <a href = "#home-section">Home</a>
+    <a href = "#about-section">About Me</a>
+    <a href = "#contact-section">Contact Me</a>
+  
+  </nav>
+  <div id = "home-section" class = "page">
+<header>
+<h1>
+<span class = "intro"> Hi👋, I'm</span><br>
+<span class ="name">Philomena <br>Macharia</span>
+</h1>
+</header>
+<div class="home">
+<img src = "Photo1.jpg" alt="image" class="img">
+<p>I'm a goal-oriented and ambitious lady who's enthusiastic about developing my programming and data analysis skills, always eager to learn and grow in both fields and be open to opportunities offered in the field of IT.
+</p>
+</div>
+<div class = "home reverse">
+<img src = "Photo3.png" alt="image" class="img">
+<p>I love dancing as it helps me reset and regain focus when I feel stressed or overwhelmed. I also enjoy reading novels or self-growth books which help calm my mind. I enjoy walks and adventures as they help me stay active.
+</p> 
+</div>
+</div>
+<section id = "about-section" class = "page" style="display:none">
+<div class = "section-content">
+  <div class ="about-text">
+      <h2>About Me</h2>
+  <p class = "subtitle">Critical Thinker <br>& Problem solver</p>
+<p>I'm a Computer Science student at Zetech University, sharpening my skills in programming and data analysis to provide solutions to real-world problems.<br> I also hold a Diploma in Business Management(Human Resource Management Specialization) from St. Paul's University which has helped me know the value of collaboration and understand people. Getting into this field is driven by curiosity and a strong desire to build my career to ensure that my contribution in IT impacts the world largely.</p></div>
+<div class = "about-img-container">
+  <img src = "Photo3.png" alt = "proile photo" class = "about-img">
+</div>
+</div>
+</section>
+<section id ="contact-section" class= "page" style = "display:none">
+  <h2>Contact Me</h2>
+  <p style="font-size: 2rem;margin-bottom: 10px; font-weight: bold; color:#FF6700;transform: translateY(-5px); align-items: center;">
+    Get in touch with me
+  </p>
+  <div class = "contact-layout">
+    <div class ="contact-details">
+  <div class ="contact-box">
+    <i class="fas fa-envelope" aria-hidden="true"></i>Email: <strong>philjaime254@gmail.com</strong>
+  </div>
+    <div class ="contact-box">
+      <i class="fas fa-phone" aria-hidden="true" ></i>Phone: <strong>+254 115 783 830</strong>
+    </div>
+     <div class ="contact-box">
+      <i class="fas fa-map-marker-alt" aria-hidden="true"></i>Location: <strong>Nairobi, Kenya</strong>
+    </div>
+    </div>
+   <div class = "social-section">
+    <h3 class = "follow-title">Follow Me</h3>
+   <div class = "contact-box">
+    <i class="fab fa-github"></i>
+    <a href = "https://github.com/Dr-Phil428"target="_blank"> Github</a>
+  </div>
+    <div class = "contact-box">
+      <i class="fab fa-instagram"></i>
+ <a href = "https://www.instagram.com/philly_ndutaa"target="_blank"> Instagram</a>
+    </div>
+   <div class = "contact-box">
+    <i class="fab fa-linkedin"></i>
+<a href = "https://www.linkedin.com/in/dr-phil-801510320"target="_blank">LinkedIn</a>
+   </div>
+  </div>
+  </div>
+</section>
+<script>
+const homeSection = document.getElementById("home-section");
+const aboutSection = document.getElementById("about-section");
+const contactSection = document.getElementById("contact-section");
+
+document.querySelector('a[href="#home-section"]').addEventListener("click", function(e) {
+  e.preventDefault();
+  homeSection.style.display = "block";
+  aboutSection.style.display = "none";
+  contactSection.style.display = "none";
+});
+
+document.querySelector('a[href="#about-section"]').addEventListener("click", function(e) {
+  e.preventDefault();
+  homeSection.style.display = "none";
+  aboutSection.style.display = "block";
+  contactSection.style.display = "none";
+
+  const text = aboutSection.querySelector(".about-text");
+  const imgContainer = aboutSection.querySelector(".about-img-container");
+  const sectionContent= aboutSection.querySelector(".section-content")
+
+  text.classList.remove("slide-left");
+  imgContainer.classList.remove("slide-right");
+  void text.offsetWidth; 
+
+  
+  text.classList.add("slide-left");
+  imgContainer.classList.add("slide-right");
+});
+
+document.querySelector('a[href="#contact-section"]').addEventListener("click", function(e) {
+  e.preventDefault();
+  homeSection.style.display = "none";
+  aboutSection.style.display = "none";
+  contactSection.style.display = "block";
+});
+
+const cursorColors = [
+  "#FF6700",
+  "#F6BE00",
+  "#006400"
+];
+let colorIndex = 0;
+
+document.addEventListener("mousemove", (e) => {
+  const dot = document.createElement("div");
+  dot.className = "cursor-trail";
+
+  dot.style.left = e.clientX + "px";
+  dot.style.top = e.clientY + "px";
+
+  dot.style.backgroundColor = cursorColors[colorIndex];
+
+  colorIndex = (colorIndex + 1) % cursorColors.length;
+
+  document.body.appendChild(dot);
+
+  setTimeout(() => {
+    dot.remove();
+  }, 800);
+});
+const starLayer = document.createElement("div");
+starLayer.className = "star-layer";
+document.body.appendChild(starLayer);
+
+const numStars = 20; 
+
+for (let i = 0; i < numStars; i++) {
+  const star = document.createElement("div");
+  star.className = "star";
+
+
+  star.style.left = `${Math.random() * 100}vw`;
+  star.style.top = `${Math.random() * 100}vh`;
+
+  
+  const size = Math.random() * 6 + 4; 
+  star.style.width = `${size}px`;
+  star.style.height = `${size}px`;
+
+   const duration = Math.random() * 5 + 5; 
+  star.style.animationDuration = `${duration}s`;
+
+  starLayer.appendChild(star);
+}
+const decorLayer = document.querySelector(".decor-layer");
+
+// How many diamonds you want
+const diamondCount = 2;
+
+for(let i = 0; i < diamondCount; i++){
+  const diamond = document.createElement("div");
+  diamond.classList.add("diamond");
+  
+  // Random size between 40px and 120px
+  const size = Math.floor(Math.random() * 70) + 30;
+  diamond.style.width = size + "px";
+  diamond.style.height = size + "px";
+  
+  // Random position
+  diamond.style.top = Math.random() * 100 + "%";
+  diamond.style.left = Math.random() * 100 + "%";
+  
+  // Random animation duration for variety (5s to 15s)
+  const duration = Math.random() * 15 + 5;
+  diamond.style.animationDuration = duration + "s";
+  
+  decorLayer.appendChild(diamond);
+}
+
+
+
+
+
+</script>
+</body>
+</html>
