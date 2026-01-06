@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML</title>
+<style>
+ body{
+ background-color: #0C090A;
+ color: #16F529;
+ font-family: Charter BT;
+ }
+ header {
+ text-align: left;
+ }
+ .intro {
+font-size: 1.5rem;
+color:#FF6700;
+opacity: 0;
+animation: fadeIn 2s ease forwards;
+}
+.intro::before {
+content:"✨";
+color:#FF6700;
+margin: 0 8px;
+}
+ .name{
+font-size: 3rem;
+color:#F6BE00;
+opacity: 0;
+animation: fadeIn 2s ease forwards;
+animation-delay: 2s;
+}
+.name::after{
+  content: "✨";
+  color:#F6BE00;
+  margin: 0 12px;
+}
+.home{
+display: flex;
+align-items: center;
+gap: 40px;
+padding: 40px 20px;
+max-width: 1000px;
+margin: 0 auto;
+}
+.home.reverse{
+flex-direction:row-reverse;
+}
+.home{
+flex: 0;
+}
+.img{
+width:300px;
+height:300px;
+border-radius: 50%;
+object-fit: cover;
+border: 2px solid #FF6700;
+margin:0 20px;
+flex-shrink: 0;
+}
+p {
+color:  #16F529;
+line-height: 1.4;
+max-width: 500px;
+margin: 0px;
+padding: 0 10px;
+}
+ @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+   .home, .home.reverse {
+     flex-direction: column;
+     text-align: center;
+   }
+ }
+</style>
+</head>
+<body>
+<header>
+<h1>
+<span class = "intro"> Hi👋, I'm</span><br>
+<span class ="name">Philomena Macharia</span>
+</h1>
+</header>
+<div class="home">
+     <img src = "Photo1.jpg" alt="image" class="img">
+     <p>
+      According to Ramakrishna M and Karthik T (2024) smart digital noticeboards have been of great advantage because they help deliver information that is updates, encourages interaction and engagement between users. It has also been found that using digital noticeboards has helped in reducing consumption of paper and reduced cost and has increased access to information by users. Smart digital noticeboards or bulletins as investigated by the Alistair cousins (2023) is a platform that is used to display information or messages digitally using an LCD screen. 
+    </p>
+     </div>
+<div class = "home reverse">
+   <img src = "Photo1.jpg" alt="image" class="img">
+   <p>
+    According to Ramakrishna M and Karthik T (2024) smart digital noticeboards have been of great advantage because they help deliver information that is updates, encourages interaction and engagement between users. It has also been found that using digital noticeboards has helped in reducing consumption of paper and reduced cost and has increased access to information by users. Smart digital noticeboards or bulletins as investigated by the Alistair cousins (2023) is a platform that is used to display information or messages digitally using an LCD screen.
+  </p> 
+</div>
+</body>
+</html>
